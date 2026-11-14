@@ -19,6 +19,7 @@
 
 ## Phase 4 — agent tools and memory
 - [ ] Enable research and approved file workflows.
+- [x] Add the first integrated SYNTRA Tools extension: safe calculator, private notes, task list, and workspace status (build/validation still pending on the target PC).
 - [ ] Add inspectable memory and correction/retention controls.
 - [ ] Add scheduled tasks with audit events and failure notifications.
 - [ ] Evaluate Hermes as a delegated worker only after its source/runtime is available.
