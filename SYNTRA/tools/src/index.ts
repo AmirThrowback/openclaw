@@ -36,11 +36,18 @@ function assertId(id: string): void {
 }
 
 function tokenize(expression: string): string[] {
-  const tokens = expression.match(/\d+(?:\.\d+)?|[()+\-*/^]/g);
-  if (!tokens || tokens.join("") !== expression.replace(/\s+/g, "")) {
-    throw new Error("Use only numbers, parentheses, +, -, *, / and ^.");
+  const source = expression.trim();
+  const tokens: string[] = [];
+  const pattern = /\s*(\d+(?:\.\d+)?|[()+\-*/^])/y;
+  let offset = 0;
+  while (offset < source.length) {
+    pattern.lastIndex = offset;
+    const match = pattern.exec(source);
+    if (!match) throw new Error("Use only numbers, parentheses, +, -, *, / and ^.");
+    tokens.push(match[1]);
+    offset = pattern.lastIndex;
+    if (tokens.length > 100) throw new Error("Expression is too long.");
   }
-  if (tokens.length > 100) throw new Error("Expression is too long.");
   return tokens;
 }
 
