@@ -27,6 +27,7 @@ SYNTRA is the personal-assistant layer built on top of this OpenClaw fork. It ke
 - `SYNTRA/SECURITY.md` — autonomy, identity, and action policy.
 - `SYNTRA/.env.example` — names of required configuration values; never put real secrets here.
 - `SYNTRA/ROADMAP.md` — staged implementation plan.
+- `SYNTRA/tools/` — integrated OpenClaw tool extension (calculator, private notes, tasks, workspace status); build and runtime validation are pending on the target PC.
 
 ## First-run status
 
